@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<pre>
+// app/routes/contacts.py
+client = HubSpot(access_token='access_token')
+contacts_page = client.crm.contacts.basic_api.get_page()
+</pre>
+
+<table class="contacts-list">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ID Komet</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for company in companies %}
+        <tr>
+            <td>{{ company.id }}</td>
+            <td>{{ company.properties.name }}</td>
+            <td>{{ company.properties.idKometSales }}</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}
