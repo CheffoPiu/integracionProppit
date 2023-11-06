@@ -17,6 +17,7 @@ from app.helpers.hubspot import create_client
 
 module = Blueprint("webhooks", __name__)
 
+
 @module.route("/handle", methods=["POST"])
 #@hubspot_signature_required
 # def handle():
