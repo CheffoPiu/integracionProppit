@@ -13,7 +13,7 @@ def get_database():
 def get_colection(colection):
     dbname = get_database()
     collection_name = dbname[colection]
-    return collection_name 
+    return collection_name
 
    
 
